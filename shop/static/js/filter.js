@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const formData = new FormData();
         formData.append("type_product", type_product);
 
-        // получаем все элементы, у которых id начинается с 'list_product-'
+        
         
 
         
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         const divs = document.querySelectorAll('[id^="list_product-"]');
         divs.forEach(div => {
-            div.remove(); // полностью удаляем div
+            div.remove(); 
         });
         
         
