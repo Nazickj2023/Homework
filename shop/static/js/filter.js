@@ -9,33 +9,25 @@ document.addEventListener("DOMContentLoaded", () => {
         const formData = new FormData();
         formData.append("type_product", type_product);
 
-        
-        
-
-        
-
         const response = await fetch("/shop?type=filter_product", {
             method: "POST",
             body: formData
         });
         const data = await response.json();
         
-        resultContainer.innerHTML = "";
         if (data.length === 0) {
-            resultContainer.textContent = "все данние форми скушали";
+            resultContainer.innerHTML = "все данние форми скушали";
             return;
         }
-        
-        
         const divs = document.querySelectorAll('[id^="list_product-"]');
         divs.forEach(div => {
             div.remove(); 
         });
+
         
-        
+        let html = '';
         data.forEach(product => {
-            const div = document.createElement("div");
-            div.innerHTML = `
+            html += `
                 <hr>
                 <img src="/shop/static/images/products/${product.product_name}.png" alt="${product.product_name}" width="200" height="200">
                 <p>Назва продукту: ${product.product_name}</p>
@@ -46,8 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 <button type="button" class="buy" id="${product.id}">BUY</button>
                 <hr>
             `;
-                resultContainer.appendChild(div);
-            });
-        
+        });
+
+        resultContainer.innerHTML = html;
     });
 });
+

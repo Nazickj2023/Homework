@@ -39,7 +39,7 @@ shop.shop.add_url_rule(
 )
 
 #shop.shop.add_url_rule(
-#    rule ="/shop/filter_product",
+#    rule ="/shop",
 #    view_func = shop.filter_product,
 #    methods = ['GET','POST']
 #)
