@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Click App{% endblock %}
+{% block links %}<link rel="stylesheet" href="{% static 'click_app/css/click.css' %}">{% endblock %}
+
+
+{% block content %}
+    <script src="{% static 'click_app/js/click.js' %}"></script>
+{% endblock %}
