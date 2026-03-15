@@ -20,6 +20,7 @@ let check = 0
 clik.onclick = function() {
     let cards = document.querySelectorAll('.img')
     if (clik.classList.contains('Start')) {
+        check = 0;
         clik.innerText = 'Reset';
         clik.classList.remove('Start');
         clik.classList.add('Reset');
@@ -42,7 +43,7 @@ clik.onclick = function() {
     }
 
     }else {
-
+        check = 0;
         clik.innerText = 'Start';
         clik.classList.remove('Reset');
         clik.classList.add('Start');
